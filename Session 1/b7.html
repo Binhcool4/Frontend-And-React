@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumArrays(...arrays) {
+            const result = arrays.map(arr => {
+                return arr.reduce((sum, value) => sum + value, 0);
+            });
+            return result;
+        }
+
+        console.log(sumArrays([1, 2], [6, 7, 8], [12, 8]));
+    </script>
+</body>
+</html>
