@@ -1,121 +1,87 @@
-function parseNum(val: string | number): number | null {
-  let num = Number(val);
-  return isNaN(num) ? null : num;
+function add(a: number, b: number): number {
+  return a + b;
 }
 
-function plus(a: string | number, b: string | number): number | string {
-  let A = parseNum(a);
-  let B = parseNum(b);
-  if (A === null || B === null){
-    return "khong hop le";
-  }
-  return A + B;
+function subtract(a: number, b: number): number {
+  return a - b;
 }
 
-function sub(a: string | number, b: string | number): number | string {
-  let A = parseNum(a);
-  let B = parseNum(b);
-  if (A === null || B === null){
-    return "khong hop le";
-  }
-  return A - B;
+function multiply(a: number, b: number): number {
+  return a * b;
 }
 
-function mul(a: string | number, b: string | number): number | string {
-  let A = parseNum(a);
-  let B = parseNum(b);
-  if (A === null || B === null){
-    return "khong hop le";
-  }
-  return A * B;
+function divide(a: number, b: number): number {
+  if (b === 0) throw new Error("Không thể chia cho 0");
+  return a / b;
 }
 
-function div(a: string | number, b: string | number): number | string {
-  let A = parseNum(a);
-  let B = parseNum(b);
-  if (A === null || B === null){
-    return "khong hop le";
-  }
-  if (B === 0) return "khong chia cho 0";
-  return A / B;
+function power(base: number, exponent: number): number {
+  return Math.pow(base, exponent);
 }
 
-function power(a: string | number, b: string | number): number | string {
-  let A = parseNum(a);
-  let B = parseNum(b);
-  if (A === null || B === null){
-    return "khong hop le";
-  }
-  return Math.pow(A, B);
+function sqrt(base: number, root: number): number {
+  if (root === 0) throw new Error("Căn bậc 0 không xác định");
+  return Math.pow(base, 1 / root);
 }
 
-function sprt(a: string | number, b: string | number): number | string {
-  let A = parseNum(a);
-  let B = parseNum(b);
-  if (A === null || B === null || B === 0){
-    return "khong hop le";
-  }
-  return Math.pow(A, 1 / B);
-}
-
-function factorial(a: string | number): number | string {
-  let A = parseNum(a);
-  if (A === null || A < 0 || !Number.isInteger(A)){
-    return "khong hop le";
-  }
+function factorial(n: number): number {
+  if (n < 0) throw new Error("Không tính giai thừa số âm");
+  if (!Number.isInteger(n)) throw new Error("Giai thừa chỉ áp dụng cho số nguyên");
   let result = 1;
-  for (let i = 2; i <= A; i++) {
-    result *= i;
-  }
+  for (let i = 2; i <= n; i++) result *= i;
   return result;
 }
 
-function handle(check: string): void {
-  const num1 = (document.getElementById("num1") as HTMLInputElement).value;
-  const num2 = (document.getElementById("num2") as HTMLInputElement).value;
-  const result = document.getElementById("result") as HTMLElement;
+function handleOperation(op: string): void {
+  const input1 = (document.getElementById("input1") as HTMLInputElement).value.trim();
+  const input2 = (document.getElementById("input2") as HTMLInputElement).value.trim();
+  const resultEl = document.getElementById("result") as HTMLElement;
 
-  let a = parseNum(num1);
-  let b = parseNum(num2);
-  let c: number | string = "ket qua";
+  let a = Number(input1);
+  let b = Number(input2);
 
-  if (check === "!") {
-    if (a === null) {
-      result.textContent = "Khong hop le";
-      return;
-    }
-    c = factorial(a);
-  } else {
-    if (a === null || b === null) {
-      result.textContent = "Khong hop le";
-      return;
-    }
-
-    switch (check) {
-      case "+":
-        c = plus(a, b);
-        break;
-      case "-":
-        c = sub(a, b);
-        break;
-      case "*":
-        c = mul(a, b);
-        break;
-      case "/":
-        c = div(a, b);
-        break;
-      case "^":
-        c = power(a, b);
-        break;
-      case "√":
-        c = sprt(a, b);
-        break;
-      default:
-        c = "Phep tinh khong ho tro";
-    }
+  if (op !== "factorial" && (isNaN(a) || isNaN(b))) {
+    resultEl.textContent = "Vui lòng nhập hai số hợp lệ.";
+    return;
   }
 
-  result.textContent = "Kết quả: " + c;
+  if (op === "factorial" && isNaN(a)) {
+    resultEl.textContent = "Vui lòng nhập số hợp lệ cho giai thừa.";
+    return;
+  }
+
+  try {
+    let result: number;
+
+    switch (op) {
+      case "add":
+        result = add(a, b);
+        break;
+      case "subtract":
+        result = subtract(a, b);
+        break;
+      case "multiply":
+        result = multiply(a, b);
+        break;
+      case "divide":
+        result = divide(a, b);
+        break;
+      case "power":
+        result = power(a, b);
+        break;
+      case "sqrt":
+        result = sqrt(a, b);
+        break;
+      case "factorial":
+        result = factorial(a);
+        break;
+      default:
+        resultEl.textContent = "Phép toán không hợp lệ.";
+        return;
+    }
+
+    resultEl.textContent = `Kết quả: ${result}`;
+  } catch (err) {
+    resultEl.textContent = (err as Error).message;
+  }
 }
-console.log('handle function is loaded');
-(window as any).handle = handle;

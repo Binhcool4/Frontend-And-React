@@ -1,114 +1,83 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function parseNum(val) {
-    let num = Number(val);
-    return isNaN(num) ? null : num;
+function add(a, b) {
+    return a + b;
 }
-function plus(a, b) {
-    let A = parseNum(a);
-    let B = parseNum(b);
-    if (A === null || B === null) {
-        return "khong hop le";
-    }
-    return A + B;
+function subtract(a, b) {
+    return a - b;
 }
-function sub(a, b) {
-    let A = parseNum(a);
-    let B = parseNum(b);
-    if (A === null || B === null) {
-        return "khong hop le";
-    }
-    return A - B;
+function multiply(a, b) {
+    return a * b;
 }
-function mul(a, b) {
-    let A = parseNum(a);
-    let B = parseNum(b);
-    if (A === null || B === null) {
-        return "khong hop le";
-    }
-    return A * B;
+function divide(a, b) {
+    if (b === 0)
+        throw new Error("Không thể chia cho 0");
+    return a / b;
 }
-function div(a, b) {
-    let A = parseNum(a);
-    let B = parseNum(b);
-    if (A === null || B === null) {
-        return "khong hop le";
-    }
-    if (B === 0)
-        return "khong chia cho 0";
-    return A / B;
+function power(base, exponent) {
+    return Math.pow(base, exponent);
 }
-function power(a, b) {
-    let A = parseNum(a);
-    let B = parseNum(b);
-    if (A === null || B === null) {
-        return "khong hop le";
-    }
-    return Math.pow(A, B);
+function sqrt(base, root) {
+    if (root === 0)
+        throw new Error("Căn bậc 0 không xác định");
+    return Math.pow(base, 1 / root);
 }
-function sprt(a, b) {
-    let A = parseNum(a);
-    let B = parseNum(b);
-    if (A === null || B === null || B === 0) {
-        return "khong hop le";
-    }
-    return Math.pow(A, 1 / B);
-}
-function factorial(a) {
-    let A = parseNum(a);
-    if (A === null || A < 0 || !Number.isInteger(A)) {
-        return "khong hop le";
-    }
+function factorial(n) {
+    if (n < 0)
+        throw new Error("Không tính giai thừa số âm");
+    if (!Number.isInteger(n))
+        throw new Error("Giai thừa chỉ áp dụng cho số nguyên");
     let result = 1;
-    for (let i = 2; i <= A; i++) {
+    for (let i = 2; i <= n; i++)
         result *= i;
-    }
     return result;
 }
-function handle(check) {
-    const num1 = document.getElementById("num1").value;
-    const num2 = document.getElementById("num2").value;
-    const result = document.getElementById("result");
-    let a = parseNum(num1);
-    let b = parseNum(num2);
-    let c = "ket qua";
-    if (check === "!") {
-        if (a === null) {
-            result.textContent = "Khong hop le";
-            return;
-        }
-        c = factorial(a);
+function handleOperation(op) {
+    const input1 = document.getElementById("input1").value.trim();
+    const input2 = document.getElementById("input2").value.trim();
+    const resultEl = document.getElementById("result");
+    let a = Number(input1);
+    let b = Number(input2);
+    if (op !== "factorial" && (isNaN(a) || isNaN(b))) {
+        resultEl.textContent = "Vui lòng nhập hai số hợp lệ.";
+        return;
     }
-    else {
-        if (a === null || b === null) {
-            result.textContent = "Khong hop le";
-            return;
-        }
-        switch (check) {
-            case "+":
-                c = plus(a, b);
+    if (op === "factorial" && isNaN(a)) {
+        resultEl.textContent = "Vui lòng nhập số hợp lệ cho giai thừa.";
+        return;
+    }
+    try {
+        let result;
+        switch (op) {
+            case "add":
+                result = add(a, b);
                 break;
-            case "-":
-                c = sub(a, b);
+            case "subtract":
+                result = subtract(a, b);
                 break;
-            case "*":
-                c = mul(a, b);
+            case "multiply":
+                result = multiply(a, b);
                 break;
-            case "/":
-                c = div(a, b);
+            case "divide":
+                result = divide(a, b);
                 break;
-            case "^":
-                c = power(a, b);
+            case "power":
+                result = power(a, b);
                 break;
-            case "√":
-                c = sprt(a, b);
+            case "sqrt":
+                result = sqrt(a, b);
+                break;
+            case "factorial":
+                result = factorial(a);
                 break;
             default:
-                c = "Phep tinh khong ho tro";
+                resultEl.textContent = "Phép toán không hợp lệ.";
+                return;
         }
+        resultEl.textContent = `Kết quả: ${result}`;
     }
-    result.textContent = "Kết quả: " + c;
+    catch (err) {
+        resultEl.textContent = err.message;
+    }
 }
-console.log('handle function is loaded');
-window.handle = handle;
 //# sourceMappingURL=b9.js.map
