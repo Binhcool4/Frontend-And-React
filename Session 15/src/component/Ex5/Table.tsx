@@ -97,7 +97,7 @@ export default class Table extends Component {
                     padding: "5px 10px",
                     borderRadius: 5,
                     color: "white",
-                    backgroundColor: "#2ecc71",
+                    backgroundColor: "rgb(192 238 157)",
                   }}
                 >
                   Đang hoạt động
