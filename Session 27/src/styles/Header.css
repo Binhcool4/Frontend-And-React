@@ -1,0 +1,27 @@
+.main-header {
+  margin-bottom: 24px;
+}
+.main-nav {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 24px;
+  margin-left: 24px;
+}
+.nav-link {
+  font-size: 22px;
+  font-weight: 400;
+  color: #111;
+  text-decoration: none;
+  padding: 18px 28px;
+  border-radius: 2px;
+  background: transparent;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+.nav-link.active {
+  background: #ef2323;
+  color: #fff;
+  font-weight: 600;
+}

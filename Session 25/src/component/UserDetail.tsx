@@ -9,7 +9,7 @@ const UserDetail = () => {
   }
 
   return (
-    <div style={{width: '15%'}}>
+    <div style={{ width: '15%' }}>
       <h2>Thông tin chi tiết</h2>
       <div style={{ border: "1px solid #ccc", padding: 16, minWidth: 300 }}>
         <div>Id: {user.id}</div>

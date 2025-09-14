@@ -1,0 +1,28 @@
+.task-detail-container {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  text-align: center;
+}
+.task-detail-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.task-detail-desc {
+  color: #444;
+  font-size: 19px;
+  margin-bottom: 32px;
+}
+.task-detail-btn {
+  padding: 8px 20px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.task-detail-notfound {
+  color: red;
+}
