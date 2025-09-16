@@ -1,0 +1,103 @@
+.student-manager-container {
+  background: #46607c;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 16px;
+  box-shadow: 0 2px 8px #0001;
+}
+.student-manager-header {
+  padding: 16px;
+  background: #46607c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.student-manager-header h2 {
+  margin: 0;
+  font-weight: 700;
+}
+.student-manager-header span {
+  color: #7ed957;
+}
+.student-manager-add-btn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.student-table-wrapper {
+  background: #fff;
+  padding: 0;
+  border-radius: 0 0 6px 6px;
+}
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.student-table th, .student-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px 12px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 15px;
+}
+.student-table th {
+  background: #f5f7fa;
+  font-weight: 700;
+  text-align: center;
+}
+.student-table td {
+  vertical-align: middle;
+}
+.student-table tr:nth-child(even) {
+  background: #f9fbfd;
+}
+.student-table-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.student-table-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 2px 6px;
+}
+.student-table-actions .edit {
+  color: #ffc107;
+}
+.student-table-actions .delete {
+  color: #dc3545;
+}
+.student-manager-footer {
+  padding: 16px;
+  font-size: 15px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.student-manager-pagination button {
+  margin: 0 2px;
+  background: none;
+  border: none;
+  color: #46607c;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+}
+.student-manager-pagination .active {
+  background: #00aaff;
+  color: #fff;
+}
