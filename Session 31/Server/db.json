@@ -1,0 +1,36 @@
+{
+  "list-post": [
+    {
+      "id": 1,
+      "title": "State trong ReactJS",
+      "image": "https://picsum.photos/200/300",
+      "date": "20/06/2024",
+      "status": true,
+      "content": "State là một đối tượng đặc biệt trong ReactJS, nó cho phép bạn lưu trữ và quản lý dữ liệu mà có thể thay đổi theo thời gian. Khi state thay đổi, React sẽ tự động cập nhật giao diện người dùng để phản ánh những thay đổi đó."
+    },
+    {
+      "id": 2,
+      "title": "Props trong ReactJS",
+      "image": "https://picsum.photos/100/200",
+      "date": "21/06/2024",
+      "status": true,
+      "content": "Props (viết tắt của properties) là các thuộc tính được truyền từ component cha xuống component con trong ReactJS. Props giúp bạn truyền dữ liệu và các hàm xử lý sự kiện từ component cha sang component con một cách dễ dàng."
+    },
+    {
+      "id": 3,
+      "title": "Component trong ReactJS",
+      "image": "https://picsum.photos/300/400",
+      "date": "22/06/2024",
+      "status": false,
+      "content": "Component là những khối xây dựng cơ bản của ứng dụng ReactJS. Mỗi component đại diện cho một phần giao diện người dùng và có thể tái sử dụng trong nhiều nơi khác nhau. Component có thể là class hoặc function."
+    },
+    {
+      "id": "4",
+      "title": "React",
+      "image": "https://1000logos.net/wp-content/uploads/2023/10/React-Logo.jpg",
+      "date": "18/09/2025",
+      "status": "Ngừng xuất bản",
+      "content": "React"
+    }
+  ]
+}

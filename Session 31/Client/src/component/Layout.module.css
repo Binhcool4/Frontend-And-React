@@ -1,0 +1,115 @@
+.container {
+  padding: 24px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.searchGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.input,
+.select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+}
+
+.addBtn {
+  background: #1677ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.thead {
+  background: #f1f3f4;
+}
+
+.th, .td {
+  padding: 12px;
+  border: 1px solid #eee;
+}
+
+.img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.status {
+  background: #e6ffed;
+  color: #389e0d;
+  padding: 4px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.actionBtn {
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 500;
+  margin-right: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.blockBtn {
+  background: #faad14;
+  color: #fff;
+}
+
+.editBtn {
+  background: #fffbe6;
+  color: #faad14;
+  border: 1px solid #faad14;
+}
+
+.deleteBtn {
+  background: #fff1f0;
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  margin-right: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.centerText {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 40px;
+}
