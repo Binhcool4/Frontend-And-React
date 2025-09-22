@@ -1,0 +1,23 @@
+.cart-item input[type="number"] {
+  width: 50px;
+  text-align: center;
+}
+.cart-item .update-btn {
+  background: #4fc3f7;
+  color: #fff;
+  border: none;
+  margin-right: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.cart-item .delete-btn {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
