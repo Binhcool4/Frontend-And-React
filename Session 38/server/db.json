@@ -1,0 +1,32 @@
+{
+  "Books": [
+    {
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "year": 1988,
+      "category": "Science",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "year": 2011,
+      "category": "History"
+    },
+    {
+      "id": "3",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year": 1925,
+      "category": "Fiction"
+    },
+    {
+      "id": "5",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "year": 1960,
+      "category": "Fiction"
+    }
+  ]
+}
