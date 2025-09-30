@@ -1,0 +1,11 @@
+{
+  "Products": [
+    {
+      "id": "0c5f",
+      "name": "Giày thể thao",
+      "price": 50000,
+      "description": "hayyy",
+      "imageUrl": "https://res.cloudinary.com/dd9h0o4e3/image/upload/v1759149147/cld-sample-5.jpg"
+    }
+  ]
+}
