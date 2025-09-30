@@ -30,7 +30,7 @@ export default function Ex345() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/Products");
+      const response = await axios.get("http://localhost:3000/Products");
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -136,7 +136,7 @@ export default function Ex345() {
       };
 
       const response = await axios.post(
-        "http://localhost:8080/Products",
+        "http://localhost:3000/Products",
         newProduct
       );
       setProducts((prev) => [...prev, response.data]);
@@ -164,7 +164,7 @@ export default function Ex345() {
   const handleDelete = async (id: number) => {
     if (window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
       try {
-        await axios.delete(`http://localhost:8080/Products/${id}`);
+        await axios.delete(`http://localhost:3000/Products/${id}`);
         setProducts((prev) => prev.filter((product) => product.id !== id));
         alert("Xóa sản phẩm thành công!");
       } catch (error) {
