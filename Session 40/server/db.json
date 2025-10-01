@@ -1,0 +1,42 @@
+{
+  "Products": [
+    {
+      "id": "b7bb9e77-20c2-4318-83bd-51fe9358f8d3",
+      "code": "XYZ190",
+      "name": "iphone16",
+      "price": 36000000,
+      "image": "https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-1-600x600.jpg",
+      "status": true,
+      "categoryId": "1"
+    },
+    {
+      "id": "f4525e49-42b8-49b3-9a6b-5507d9b12ead",
+      "code": "XYZ180",
+      "name": "iphone17",
+      "price": 36000000,
+      "image": "https://res.cloudinary.com/dd9h0o4e3/image/upload/v1759286014/zxeoxbctykpe4omp2zko.webp",
+      "status": true,
+      "categoryId": "1"
+    }
+  ],
+  "Catergories": [
+    {
+      "id": "1",
+      "name": "Smart Phone",
+      "status": true,
+      "description": "Điện thoại thông minh"
+    },
+    {
+      "id": "2",
+      "name": "Tablet",
+      "status": true,
+      "description": "Máy tính bảng"
+    },
+    {
+      "id": "3",
+      "name": "Laptop",
+      "status": true,
+      "description": "Máy tính xách tay"
+    }
+  ]
+}
